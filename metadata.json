@@ -1,0 +1,6 @@
+{
+  "name": "JK Seko Trading",
+  "description": "B2B industrial website for JK Seko Trading featuring a compliance header, hero carousel, performance counters, services grid, project gallery, and lead funnel.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
