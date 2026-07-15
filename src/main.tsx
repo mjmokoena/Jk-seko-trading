@@ -5,6 +5,7 @@ import App from './App.tsx';
 import Home from './pages/Home.tsx';
 import ServicePage from './pages/ServicePage.tsx';
 import CaseStudyPage from './pages/CaseStudyPage.tsx';
+import BlogPage from './pages/BlogPage.tsx';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')!).render(
           <Route index element={<Home />} />
           <Route path="service/:serviceId" element={<ServicePage />} />
           <Route path="case-study/:caseId" element={<CaseStudyPage />} />
+          <Route path="blog" element={<BlogPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

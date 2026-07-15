@@ -34,6 +34,7 @@ export default function Header() {
             <a href="/#services" className="text-slate-600 hover:text-amber-500 font-medium transition-colors">Services</a>
             <a href="/#projects" className="text-slate-600 hover:text-amber-500 font-medium transition-colors">Projects</a>
             <a href="/#case-studies" className="text-slate-600 hover:text-amber-500 font-medium transition-colors">Case Studies</a>
+            <Link to="/blog" className="text-slate-600 hover:text-amber-500 font-medium transition-colors">Blog & Resources</Link>
             <a href="/#contact" className="text-slate-600 hover:text-amber-500 font-medium transition-colors">Contact</a>
             
             <a href="/#contact" className="bg-amber-500 hover:bg-amber-600 text-slate-900 px-6 py-2.5 rounded-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center gap-2">
@@ -57,6 +58,7 @@ export default function Header() {
           <a href="/#services" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-700 hover:text-amber-500 hover:bg-slate-50 rounded-md">Services</a>
           <a href="/#projects" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-700 hover:text-amber-500 hover:bg-slate-50 rounded-md">Projects</a>
           <a href="/#case-studies" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-700 hover:text-amber-500 hover:bg-slate-50 rounded-md">Case Studies</a>
+          <Link to="/blog" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-700 hover:text-amber-500 hover:bg-slate-50 rounded-md">Blog & Resources</Link>
           <a href="/#contact" onClick={() => setIsOpen(false)} className="block px-3 py-3 text-base font-medium text-slate-700 hover:text-amber-500 hover:bg-slate-50 rounded-md">Contact</a>
           <div className="pt-4">
             <a href="/#contact" onClick={() => setIsOpen(false)} className="w-full bg-amber-500 text-slate-900 px-6 py-3 rounded-sm font-bold flex items-center justify-center gap-2">
