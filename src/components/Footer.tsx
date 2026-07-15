@@ -25,10 +25,11 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold mb-4 uppercase tracking-wider text-sm">Company</h4>
             <ul className="space-y-2">
-              <li><Link to="/" className="hover:text-amber-400 transition-colors">About Us</Link></li>
+              <li><Link to="/about" className="hover:text-amber-400 transition-colors">About Us</Link></li>
               <li><a href="/#services" className="hover:text-amber-400 transition-colors">Our Services</a></li>
               <li><a href="/#projects" className="hover:text-amber-400 transition-colors">Project Portfolio</a></li>
               <li><Link to="/blog" className="hover:text-amber-400 transition-colors">Blog & Resources</Link></li>
+              <li><Link to="/quote-calculator" className="hover:text-amber-400 transition-colors">Cost Calculator</Link></li>
               <li><a href="/#contact" className="hover:text-amber-400 transition-colors">Contact</a></li>
             </ul>
           </div>
@@ -37,7 +38,19 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>123 Industrial Park Ave.</li>
               <li>Johannesburg, South Africa</li>
-              <li className="mt-4"><a href="tel:+27123456789" className="text-amber-400 font-bold hover:underline">+27 12 345 6789</a></li>
+              <li className="mt-4">
+                <a 
+                  href="tel:+27123456789" 
+                  onClick={() => {
+                    if (typeof (window as any).trackHubSpotConversion === 'function') {
+                      (window as any).trackHubSpotConversion('Phone Click', { source: 'Footer Tel Link' });
+                    }
+                  }}
+                  className="text-amber-400 font-bold hover:underline"
+                >
+                  +27 12 345 6789
+                </a>
+              </li>
               <li><a href="mailto:info@jkseko.co.za" className="hover:text-white transition-colors">info@jkseko.co.za</a></li>
             </ul>
           </div>

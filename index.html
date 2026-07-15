@@ -3,11 +3,113 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JK Seko Trading | Turnkey Construction & Civil Engineering</title>
+    
+    <!-- Primary Search Engine Optimization (SEO) Meta Tags -->
+    <title>JK Seko Trading | Turnkey Commercial Construction & Heavy Civil Works South Africa</title>
+    <meta name="description" content="JK Seko Trading is a 100% Black Youth-Owned, Level 1 B-BBEE certified contractor specializing in turnkey commercial builds, bulk earthworks, SANS 10400 compliant civil works, and silent chemical rock breaking across Gauteng, Mpumalanga, and Limpopo." />
+    <meta name="keywords" content="construction South Africa, civil engineering Gauteng, bulk earthworks, silent rock breaking Sandton, turnkey commercial builder, level 1 BBBEE construction, NHBRC registered builders, SANS 10400 compliant, industrial trades South Africa, Johannes Seko, structural steel fabrication Pretoria" />
+    <meta name="author" content="JK Seko Trading" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://jkseko.co.za/" />
+
+    <!-- Open Graph / Facebook Social Cards Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="JK Seko Trading | Turnkey Construction & Civil Engineering" />
+    <meta property="og:description" content="100% Black Youth-Owned, Level 1 B-BBEE civil engineering & turnkey construction contractor. Serving South Africa with NHBRC compliance, SANS 1200 earthworks, and precision trades." />
+    <meta property="og:url" content="https://jkseko.co.za/" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1541888086225-eb4520cc32e8?q=80&w=1200&auto=format&fit=crop" />
+    <meta property="og:site_name" content="JK Seko Trading" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="JK Seko Trading | Turnkey Construction & Civil Engineering" />
+    <meta name="twitter:description" content="Level 1 B-BBEE certified contracting firm executing premier civil works, turnkey builds, and geotechnical rock breaking across South Africa." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1541888086225-eb4520cc32e8?q=80&w=1200&auto=format&fit=crop" />
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics (gtag.js) Tracker with Global Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GZ3C7Y89S1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      // Initial configuration
+      gtag('config', 'G-GZ3C7Y89S1', {
+        'cookie_flags': 'SameSite=None;Secure',
+        'anonymize_ip': true
+      });
+
+      // Custom GA Event tracker function for interactive client actions
+      window.trackLeadConversion = function(formType, serviceName) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'lead_submission', {
+            'event_category': 'Engagement',
+            'event_label': formType,
+            'service': serviceName
+          });
+        }
+      };
+    </script>
+
+    <!-- AEO / AI Engine Optimization & Local Business Rich Schema Markup (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ConstructionBusiness",
+        "name": "JK Seko Trading",
+        "alternateName": "JK Seko Construction",
+        "description": "JK Seko Trading is a certified Level 1 B-BBEE, 100% Black Youth-Owned contractor executing premium commercial building, bulk earthworks, industrial trades, and rock breaking in South Africa.",
+        "url": "https://jkseko.co.za/",
+        "logo": "https://images.unsplash.com/photo-1541888086225-eb4520cc32e8?q=80&w=600&auto=format&fit=crop",
+        "image": "https://images.unsplash.com/photo-1541888086225-eb4520cc32e8?q=80&w=1200&auto=format&fit=crop",
+        "telephone": "+27123456789",
+        "email": "info@jkseko.co.za",
+        "priceRange": "$$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Industrial Park Ave.",
+          "addressLocality": "Johannesburg",
+          "addressRegion": "Gauteng",
+          "postalCode": "2000",
+          "addressCountry": "ZA"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "-26.2041",
+          "longitude": "28.0473"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "07:30",
+          "closes": "17:00"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/jk-seko-trading"
+        ],
+        "knowsAbout": [
+          "Civil Works",
+          "Turnkey Commercial Construction",
+          "SANS 10400 National Building Regulations",
+          "NHBRC Compliance",
+          "B-BBEE Procurement Credits",
+          "Silent Chemical Rock Breaking",
+          "Industrial Steel Trades"
+        ],
+        "award": "Level 1 B-BBEE Accredited Enterprise"
+      }
+    </script>
   </head>
   <body class="bg-slate-50 text-slate-900 antialiased min-h-screen">
     <div id="root"></div>

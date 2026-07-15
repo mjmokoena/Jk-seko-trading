@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Check, ChevronRight, ChevronLeft } from 'lucide-react';
+import { Check, ChevronRight, ChevronLeft, Upload } from 'lucide-react';
 
 export default function LeadFunnelForm() {
   const [step, setStep] = useState(1);
@@ -11,7 +11,9 @@ export default function LeadFunnelForm() {
     name: '',
     email: '',
     phone: '',
-    company: ''
+    company: '',
+    comments: '',
+    fileName: ''
   });
 
   const updateForm = (key: string, value: string) => {
@@ -21,10 +23,28 @@ export default function LeadFunnelForm() {
   const nextStep = () => setStep(prev => Math.min(prev + 1, 4));
   const prevStep = () => setStep(prev => Math.max(prev - 1, 1));
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setFormData(prev => ({ ...prev, fileName: file.name }));
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // In a real app, this would POST to HubSpot / CRM
     console.log('Payload pushed to CRM:', formData);
+    
+    // Call Google Analytics conversion event
+    if (typeof (window as any).trackLeadConversion === 'function') {
+      (window as any).trackLeadConversion('Standard Funnel Form', formData.serviceType || 'Not Specified');
+    }
+
+    // Call HubSpot Custom Event if user wants to integration
+    if (typeof (window as any).trackHubSpotConversion === 'function') {
+      (window as any).trackHubSpotConversion('Form Submission', formData);
+    }
+
     alert('Thank you! Our project managers will contact you shortly.');
   };
 
@@ -186,6 +206,43 @@ export default function LeadFunnelForm() {
                         className="w-full p-3 border border-slate-300 rounded-sm focus:ring-2 focus:ring-amber-500 outline-none"
                         required
                       />
+                    </div>
+
+                    <div className="sm:col-span-2 mt-2">
+                      <label className="block text-sm font-medium text-slate-700 mb-1">Project Notes / Comments (Optional)</label>
+                      <textarea 
+                        rows={3}
+                        value={formData.comments}
+                        onChange={(e) => updateForm('comments', e.target.value)}
+                        className="w-full p-3 border border-slate-300 rounded-sm focus:ring-2 focus:ring-amber-500 outline-none text-sm"
+                        placeholder="Describe any custom requirements, structural details, or special requests..."
+                      />
+                    </div>
+
+                    <div className="sm:col-span-2 mt-2">
+                      <label className="block text-sm font-medium text-slate-700 mb-1">Upload Building Plan / Scope Document (Optional)</label>
+                      <div className="border-2 border-dashed border-slate-300 rounded-sm p-4 bg-white hover:bg-slate-50 transition-colors flex flex-col items-center justify-center text-center relative cursor-pointer group">
+                        <input 
+                          type="file" 
+                          accept=".pdf,.dwg,.dxf,.png,.jpg,.jpeg,.doc,.docx"
+                          onChange={handleFileChange}
+                          className="absolute inset-0 opacity-0 w-full h-full cursor-pointer z-10"
+                        />
+                        <Upload className="text-slate-400 group-hover:text-amber-500 transition-colors mb-2" size={28} />
+                        {formData.fileName ? (
+                          <div>
+                            <p className="text-sm font-bold text-slate-800 flex items-center justify-center gap-1">
+                              <Check className="text-emerald-500" size={16} /> {formData.fileName}
+                            </p>
+                            <p className="text-xs text-slate-400 mt-1">Click or drag to replace file</p>
+                          </div>
+                        ) : (
+                          <div>
+                            <p className="text-xs font-bold text-slate-600">Drag & drop your files here, or click to browse</p>
+                            <p className="text-[10px] text-slate-400 mt-1">Supports PDF, DWG, CAD, JPG, PNG or DOC (Max 25MB)</p>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </motion.div>
